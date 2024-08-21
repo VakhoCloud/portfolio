@@ -1,0 +1,44 @@
+<div class="home-page">
+    <div>
+      <div class="container">
+            <div>
+              <div class="header-container">
+                <nav role="navigation">
+                  <div id="menuToggle">
+             
+                    <input type="checkbox" [(ngModel)]="isChecked" #hamburger/>
+                    
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                    <ul id="menu">
+                      <li (click)="scrollToSection('hero')"><mat-icon>home</mat-icon>Home</li>
+                      <li (click)="scrollToSection('skills')"><mat-icon>grade</mat-icon>Skills</li>
+                      <li (click)="scrollToSection('projects')"><mat-icon>cloud_done</mat-icon>Projects</li>
+                      <li (click)="scrollToSection('footer')"><mat-icon>contacts</mat-icon>Contact</li>
+                    </ul>
+                  
+                    
+                  </div>
+                </nav>
+              </div>
+            </div>
+            <div class="content" [class.pushed]="hamburger.checked" >
+              <div>
+                <div class="logo-box fixed-logo">
+                  <a (click)="scrollToSection('hero')"><h1>logo</h1></a>
+                  <app-header class="phone"></app-header>
+                </div>
+              </div>
+              <main>
+                <app-hero #hero id="hero"></app-hero>
+                <app-skills #skills id="skills"></app-skills>
+                <app-projects-section #projects id="projects"></app-projects-section>
+                <app-footer #footer id="footer"></app-footer>
+              </main>
+            </div>
+        </div>
+    </div>
+</div>
+

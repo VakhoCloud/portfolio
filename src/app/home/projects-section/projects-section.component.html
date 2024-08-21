@@ -1,0 +1,86 @@
+<div class="projects-container">
+    <div class="page-header">
+        <h1>
+            Projects
+        </h1>
+
+        <a>
+            <button style="background-color: var(--color-gray);">CONTACT ME</button>
+        </a>
+    </div>  
+
+    <div>
+        <div class="projects-tab">
+            <div class="projects-box" [@scrollAnimation]="projectsVisible ? 'visible' : 'hidden'">
+                <div class="image-container">
+                    <img src='../../../assets/images/quiz-app-project.png' alt="#">
+                </div>
+                <div class="projects-header">
+                    <h2>Angular Quiz Maker</h2>
+                    <p>Create and manage quizzes with Angular, RxJs, Firebase and Material UI for seamless and dynamic user experiences.</p>
+                    <p>Email: <strong>{{ demoEmail }}</strong></p>
+                    <p>Password: <strong>{{ demoPassword }}</strong></p>
+                    <div class="project-links">
+                        <a href="https://quiz-application-onut.onrender.com"><button><mat-icon>personal_video</mat-icon> VIEW PROJECT</button></a>
+                        <a href="https://github.com/VakhoCloud/quiz-app/tree/master">
+                            <button><mat-icon>code</mat-icon> VIEW CODE</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="projects-box" [@scrollAnimation]="projectsVisible ? 'visible' : 'hidden'">
+                <div class="image-container">
+                    <img src="../../../assets/images/fitness-app-project.png" alt="#">
+                </div>
+                <div class="projects-header">
+                    <h2>Angular Fitness App</h2>
+                    <p>Track and achieve your fitness goals with Angular, NgRx, Firestore and Material UI. Powered by Firebase for real-time updates and seamless performance.</p>
+                    <p>Email: <strong>{{ demoEmail }}</strong></p>
+                    <p>Password: <strong>{{ demoPassword }}</strong></p>
+                    <div class="project-links">
+                        <a href="https://fitness-app-mwkd.onrender.com/"><button><mat-icon>personal_video</mat-icon> VIEW PROJECT</button></a>
+                        <a href="https://github.com/VakhoCloud/fitness-app/tree/next">
+                            <button><mat-icon>code</mat-icon> VIEW CODE</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="projects-box" [@scrollAnimation]="projectsVisible ? 'visible' : 'hidden'">
+                <div class="image-container">
+                    <img src="../../../assets/images/angular-course-project.png" alt="#">
+                </div>
+                <div class="projects-header">
+                    <h2>Angular Recipe Book</h2>
+                    <p>Explore and save recipes with Angular, RxJs, and Firebase. Securely manage your favorite dishes with Firebase Auth.</p>
+                    <p>Email: <strong>{{ demoEmail }}</strong></p>
+                    <p>Password: <strong>{{ demoPassword }}</strong></p>
+                    <div class="project-links">
+                        <a href="https://course-project-2vqq.onrender.com"><button><mat-icon>personal_video</mat-icon> VIEW PROJECT</button></a>
+                        <a href="https://github.com/VakhoCloud/course-project/tree/master">
+                            <button><mat-icon>code</mat-icon> VIEW CODE</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="projects-box" [@scrollAnimation]="projectsVisible ? 'visible' : 'hidden'">
+                <div class="image-container">
+                    <img src="../../../assets/images/ecommerce.png" alt="#">
+                </div>
+                <div class="projects-header">
+                    <div>
+                        <h2>Angular E-commerce Landing</h2>
+                        <p>Showcase your products with a sleek, responsive landing page built using Angular and Material UI. Ideal for modern e-commerce.</p>
+                        <!-- <p>Email: <strong>None</strong></p>
+                        <p>Password: <strong>None</strong></p> -->
+                    </div>
+                    <div class="project-links">
+                        <a href="https://ecommerce-mentor1.onrender.com/"><button><mat-icon>personal_video</mat-icon> VIEW PROJECT</button></a>
+                        <a href="https://github.com/VakhoCloud/ecommerce-mentor1/tree/master">
+                            <button><mat-icon>code</mat-icon> VIEW CODE</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

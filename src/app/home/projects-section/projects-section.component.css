@@ -1,0 +1,182 @@
+
+
+.projects-container { 
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+button { 
+    position: relative;
+    padding: 10px;
+    text-decoration: none;
+    border: none;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    font-size: .75rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 150ms linear;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    width: 139px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a { 
+    text-decoration: none;
+    color: var(--color-white);
+    position: relative;
+}
+
+a::before { 
+    content: "";
+    position: absolute;
+    background-color: var(--color-green);
+    height: 50%;
+    width: 3px;
+    right: 0;
+    top: 0;
+    border: 15px;
+    transition: height 0.3s linear;
+    z-index: 1;
+}
+
+a::after { 
+    content: "";
+    position: absolute;
+    background-color: var(--color-green);
+    height: 3px;
+    width: 25%;
+    right: 0;
+    top: 0;
+    border: 15px;
+    transition: width 0.3s linear;
+}
+
+
+a:hover::before { 
+    height: 100%;
+    transition: 0.3s;
+}
+
+a:hover::after { 
+    width: 100%;
+    transition: 0.3s;
+}
+
+
+
+button::after { 
+    content: "";
+    position: absolute;
+    background-color: var(--color-green);
+    height: 3px;
+    width: 25%;
+    left: 0;
+    bottom: 0;
+    border: 15px;
+    transition: width 0.3s linear;
+}
+
+button::before { 
+    content: "";
+    position: absolute;
+    background-color: var(--color-green);
+    height: 50%;
+    width: 3px;
+    left: 0;
+    bottom: 0;
+    border: 15px;
+    transition: height 0.3s linear;
+}
+
+button:hover { 
+    color: var(--color-green);
+}
+
+button:hover::before { 
+    height: 100%;
+    transition: 0.3s;
+}
+
+button:hover::after { 
+    width: 100%;
+    transition: 0.3s;
+}
+
+
+
+mat-icon { 
+    overflow: visible;
+}
+
+.page-header { 
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+h1 { 
+    color: var(--color-green);
+}
+h2 { 
+    color: var(--color-green);
+}
+
+p { 
+    color: var(--color-gray-light);
+}
+
+
+
+img { 
+    max-width: 100%;
+    border-radius: 6px;
+}
+
+.image-container { 
+    width: 370px;
+}
+
+.projects-box { 
+    z-index: 30;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(30px);
+    padding: 25px;
+    border-radius: 12px;
+    margin: 20px 0;
+    max-width: 370px;
+}
+
+.project-links { 
+    display: flex;
+    gap: 20px;
+}
+
+
+@media only screen and (min-width: 1000px) {
+    .projects-tab { 
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .page-header { 
+        justify-content: space-between;
+    }
+
+    .projects-header { 
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 51%;
+    }
+}

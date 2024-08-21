@@ -1,0 +1,54 @@
+a { 
+    color: var(--color-white);
+    text-decoration: none;
+    margin: 0;
+}
+
+ul { 
+    display: flex;
+    gap:  20px;
+    list-style: none;
+}
+
+
+
+.active { 
+    color: blue;
+}
+
+li { 
+    position: relative;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    padding: 0 10px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+li::after { 
+    content: "";
+    position: absolute;
+    background-color: var(--color-green);
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    border: 15px;
+    transition: width 0.3s linear;
+}
+
+li:hover { 
+    color: var(--color-green);
+    transition: 0.3s;
+}
+
+li:hover::after { 
+    width: 100%;
+    transition: 0.3s;
+}
+
+
+@media only screen and (min-width: 1000px) {
+
+ 
+}

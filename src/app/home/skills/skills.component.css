@@ -1,0 +1,48 @@
+.skills-box { 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(30px);
+    padding: 15px;
+    border-radius: 12px;
+    z-index: 30;
+}
+
+img { 
+    max-width: 77px;
+}
+
+mat-divider { 
+    position: absolute;
+    width: 100%;
+    left: 0;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: 200px;
+    gap: 39px;
+}
+
+section { 
+    margin: 40px 0;
+}
+
+h1 { 
+    text-align: center;
+    color: var(--color-green);
+}
+
+@media only screen and (min-width: 1000px) {
+    section { 
+        margin: 40px 0 80px 0;
+    }
+    
+    .skills-container {
+        display: grid;
+        grid-template-columns: 170px 170px 170px 170px;
+        gap: 58px;
+    }
+}

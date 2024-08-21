@@ -1,0 +1,280 @@
+main { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.home-page {
+  width: 100%;
+}
+
+.container { 
+  overflow: hidden;
+}
+
+.content { 
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+  display: flex;
+
+  justify-content: center;
+  /* padding: 50px; */
+  padding-top: 0;
+  background-color: var(--color-black);
+}
+
+.header-container { 
+  display: block;
+  z-index: 32;
+  height: 0;
+  position: fixed;
+}
+
+
+#menuToggle
+{
+  display: block;
+  position: relative;
+  top: 30px;
+  left: 50px;
+  z-index: 1;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle a
+{
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--color-white);
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover
+{
+  color: var(--color-green);
+  border-bottom: 1px solid var(--color-green);
+}
+
+
+#menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  
+  cursor: pointer;
+  
+  opacity: 0; 
+  z-index: 31;
+  
+  -webkit-touch-callout: none;
+}
+
+
+#menuToggle span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  
+  background: var(--color-white);
+  border-radius: 3px;
+  
+  z-index: 3;
+  
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+
+}
+
+
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+
+#menu
+{
+  position: fixed;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  margin: -100px 0 0 -50px;
+  padding: 25px;
+
+  
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+
+
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li
+{
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+
+#menuToggle input:checked ~ ul
+{
+    transform: none;
+}
+
+
+.logo-box { 
+  background-color: transparent;
+  backdrop-filter: blur(30px);
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  border-end-end-radius: 15px;
+  border-end-start-radius: 15px;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+} 
+
+
+.fixed-logo { 
+  position: fixed;
+  padding: 15px;
+  z-index: 31;
+  left: 0;
+}
+
+.pushed {
+  transform: translate(40%) scale(0.75);
+}
+
+
+.content.pushed  {
+  overflow: hidden;
+  border-radius: 45px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+li { 
+  cursor: pointer;
+  display: flex;
+  gap: 15px;
+}
+
+.phone {
+  display: none;
+}
+
+a { 
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+main {
+  padding-top: 100px; 
+}
+
+app-footer {
+  /* background-color: var(--color-gray); */
+  /* position: absolute; */
+  /* left: 0; */
+  width: 100%;
+}
+
+
+@media only screen and (min-width: 1000px) {
+  .phone { 
+    display: block;
+  }
+
+  .header-container { 
+    display: none;
+  }
+
+  app-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .logo-box { 
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .container { 
+    display: flex;
+    justify-content: center;
+    background-color: var(--color-black);
+  }
+
+  .content { 
+    flex-direction: column;
+  }
+
+  .logo-box {
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+
+  }
+
+  
+}
+
+h1 {
+  margin: 5px;
+}
+
+a.active {
+  font-weight: bold;
+  color: blue; 
+}
+
+.home-page { 
+  animation: page-load linear 1s;
+}
+
+@keyframes page-load { 
+  from { scale: .9; opacity: 0;}
+  to { scale: 1; opacity: 1;}
+}
+
