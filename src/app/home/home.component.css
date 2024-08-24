@@ -1,3 +1,10 @@
+app-contact-form { 
+  position: fixed;
+  height: 100dvh;
+  width: 100%;
+  z-index: 50;
+}
+
 main { 
   display: flex;
   justify-content: center;
@@ -35,7 +42,7 @@ main {
 {
   display: block;
   position: relative;
-  top: 30px;
+  top: 37px;
   left: 50px;
   z-index: 1;
   -webkit-user-select: none;
@@ -213,11 +220,10 @@ main {
 }
 
 app-footer {
-  /* background-color: var(--color-gray); */
-  /* position: absolute; */
-  /* left: 0; */
+
   width: 100%;
 }
+
 
 
 @media only screen and (min-width: 1000px) {
@@ -257,6 +263,9 @@ app-footer {
 
   }
 
+  .logo-box a { 
+    cursor: pointer;
+  }
   
 }
 

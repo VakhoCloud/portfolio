@@ -1,0 +1,40 @@
+<div class="backdrop" (click)="toggleContactForm()"></div>
+<section>
+    <div class="close-menu">
+        <span></span>
+        <span></span>
+    </div>
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+        <div class="section-input">
+            <mat-form-field>
+                <mat-label for="fullname">Full Name</mat-label>
+                <input type="text" name="fullname" id="fullname" matInput  ngModel required>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label for="email">Email Address</mat-label>
+                <input type="email" name="email" id="email" matInput  ngModel required>
+            </mat-form-field>
+        </div>
+        <div class="section-input">
+            <mat-form-field>
+                <mat-label for="phoneNumber">Phone Number</mat-label>
+                <input type="text" name="phoneNumber" id="phoneNumber" matInput >
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label for="subject">Subject</mat-label>
+                <input type="text" name="subject" id="subject" matInput >
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>     
+                <mat-label for="message">Message</mat-label>
+                <textarea name="message" id="message" matInput ></textarea>
+            </mat-form-field>
+        </div>
+        <div class="contact-me">
+            <a>
+                <button type="submit" [disabled]="f.invalid">Send Message</button>
+            </a>
+        </div>
+    </form>
+</section>

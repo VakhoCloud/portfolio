@@ -1,4 +1,4 @@
-import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { HeaderComponent } from './header/header.component';
 import { HeroComponent } from './hero/hero.component';
 import { ProjectsSectionComponent } from './projects-section/projects-section.component';
@@ -8,18 +8,21 @@ import { SkillsComponent } from './skills/skills.component';
 import { FormsModule } from '@angular/forms';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
+import { ContactFormComponent } from '../contact-form/contact-form.component';
+import { ContactFormService } from '../contact-form/contact-form.service';
 
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [HeaderComponent, HeroComponent, ProjectsSectionComponent, FooterComponent, SkillsComponent, MatSidenavModule, FormsModule, MatIconModule],
+  imports: [HeaderComponent, HeroComponent, ProjectsSectionComponent, FooterComponent, SkillsComponent, MatSidenavModule, FormsModule, MatIconModule, ContactFormComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit{
   isChecked = false;
   scrollPosition = 0;
+  showContactMenu: boolean = false;
 
   @ViewChild('hero') heroSection!: ElementRef;
   @ViewChild('skills') skillsSection!: ElementRef;
@@ -27,11 +30,22 @@ export class HomeComponent {
   @ViewChild('footer') footerSection!: ElementRef;
   @ViewChild('content', { static: false }) contentDiv!: ElementRef;
 
-  constructor(private renderer: Renderer2) {}
+  constructor(private renderer: Renderer2, private contactFormService: ContactFormService) {}
+
+  ngOnInit(): void {
+    this.contactFormService.showContactMenuSubject.subscribe((val: boolean) => {
+      this.showContactMenu = val;
+      console.log("Contact menu visibility changed:", val);
+    });
+  }
 
   ngAfterViewInit() {
     this.setupIntersectionObserver();
   }
+
+  // toggleContactForm() {
+  //   this.contactFormService.toggleContactForm();
+  // }
 
   setupIntersectionObserver() {
     const options = {
@@ -110,5 +124,7 @@ export class HomeComponent {
     const sections = ['hero', 'skills', 'projects', 'footer'];
     return sections.indexOf(id) + 1; // nth-child index is 1-based
   }
+
+ 
 } 
 

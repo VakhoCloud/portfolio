@@ -1,7 +1,8 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { consumerPollProducersForChange } from '@angular/core/primitives/signals';
+import { ContactFormService } from '../../contact-form/contact-form.service';
 
 @Component({
   selector: 'app-projects-section',
@@ -24,11 +25,21 @@ import { consumerPollProducersForChange } from '@angular/core/primitives/signals
     ]),
   ],
 })
-export class ProjectsSectionComponent {
+export class ProjectsSectionComponent implements OnInit{
   demoEmail: string = "test@test.com";
   demoPassword: string = "test123";
   projectsVisible = false;
 
+  showContactMenu: boolean = false;
+
+  constructor(private contactFormService: ContactFormService){}
+
+  ngOnInit(): void {
+    this.contactFormService.showContactMenuSubject.subscribe((val: boolean) => {
+      this.showContactMenu = val;
+      console.log("Contact menu visibility changed:", val);
+    });
+  }
 
   @HostListener('window:scroll', ['$event'])
   checkScroll() {
@@ -40,5 +51,9 @@ export class ProjectsSectionComponent {
     } else {
       this.projectsVisible = false;
     }
+  }
+
+  toggleContactForm() {
+    this.contactFormService.toggleContactForm();
   }
 }

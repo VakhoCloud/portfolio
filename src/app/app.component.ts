@@ -5,12 +5,13 @@ import { HomeComponent } from './home/home.component';
 import { MoveDirection, ClickMode, HoverMode, OutMode, Container, Engine } from "tsparticles-engine"
 import { loadSlim } from "tsparticles-slim"; // if you are going to use `loadSlim`, install the "tsparticles-slim" package too.
 import { NgParticlesModule } from 'ng-particles';
+import { FormsModule } from '@angular/forms';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, HomeComponent, NgParticlesModule],
+  imports: [CommonModule, RouterOutlet, HomeComponent, NgParticlesModule, FormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })

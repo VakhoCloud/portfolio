@@ -71,18 +71,12 @@ button:hover::after {
     flex-direction: column;
     align-items: center;
     padding: 15px;
-    /* margin-bottom: 15px;
-    margin-left: 15px;
-    margin-right: 15px;
-    max-width: 350px; */
-
 }
 
 .hero-header { 
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* text-align: center; */
 }
 
 img { 
@@ -98,9 +92,43 @@ p {
 .hero-container {
     border-radius: 20px;
     background-color: rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(30px);
+    backdrop-filter: blur(10px);
     z-index: 30;
 }
+
+.wrapper { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+
+.box { 
+    background: url('../../../assets/images/me.png');
+    background-size: cover;
+    background-position: center center;
+    width: 275px;
+    height: 275px;
+    box-shadow: 0 20px 5px 5px rgba(0, 0, 0, .2);
+    animation: animate 5s ease-in-out infinite;
+    transition: all 1s ease-in-out;
+}
+
+
+@keyframes animate { 
+    0%  {
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+    50%  {
+        border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+    }
+    100%  {
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+}
+
+
 @media only screen and (min-width: 1000px) {
    section { 
         display: flex;
@@ -114,11 +142,18 @@ p {
     
     .hero-container { 
         max-width: 700px;
+        height: 35dvh;
+        padding: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
-    /* div > img { 
-        grid-row-start: 2;
-    }  */
+    button::after { 
+        transition: width 0.3s linear;
+    }
+  
+
 }
 
 

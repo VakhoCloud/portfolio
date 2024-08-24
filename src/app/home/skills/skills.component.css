@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(30px);
+    backdrop-filter: blur(10px);
     padding: 15px;
     border-radius: 12px;
     z-index: 30;
@@ -40,9 +40,18 @@ h1 {
         margin: 40px 0 80px 0;
     }
     
+
     .skills-container {
         display: grid;
         grid-template-columns: 170px 170px 170px 170px;
         gap: 58px;
+    }
+
+    .skills-box {
+        transition: scale 0.3s linear;
+    }
+
+    .skills-box:hover { 
+        scale: 1.25;
     }
 }
