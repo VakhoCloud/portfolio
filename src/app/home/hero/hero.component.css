@@ -155,7 +155,7 @@ p {
     .hero-container { 
         max-width: 700px;
         height: 35dvh;
-        padding: 20px;
+        padding: 30px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -165,6 +165,10 @@ p {
         transition: width 0.3s linear;
     }
   
+    .box { 
+        width: 270px;
+        height: 270px;
+    }
 
 }
 
