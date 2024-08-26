@@ -170,20 +170,21 @@ main {
 
 
 .logo-box { 
+  border-bottom: 1px solid var(--color-green);
   background-color: transparent;
   backdrop-filter: blur(30px);
   width: 100vw;
   display: flex;
   justify-content: center;
-  border-end-end-radius: 15px;
-  border-end-start-radius: 15px;
+  /* border-end-end-radius: 15px;
+  border-end-start-radius: 15px; */
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
 } 
 
 
 .fixed-logo { 
   position: fixed;
-  padding: 15px;
+  padding: 15px 0;
   z-index: 31;
   left: 0;
 }
@@ -222,6 +223,10 @@ main {
 app-footer {
 
   width: 100%;
+}
+
+mat-icon { 
+  color: var(--color-green);
 }
 
 

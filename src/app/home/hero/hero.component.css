@@ -26,13 +26,11 @@ button {
     font-weight: 500;
     cursor: pointer;
     transition: color 150ms linear;
-    display: flex;
-    align-items: center;
+    /* display: flex;
+    align-items: center; */
+    /* justify-content: center; */
     gap: 5px;
     width: 135px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 button::after { 
@@ -71,6 +69,11 @@ button:hover::after {
     flex-direction: column;
     align-items: center;
     padding: 15px;
+    max-width: 300px;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    z-index: 30;
 }
 
 .hero-header { 
@@ -88,13 +91,6 @@ p {
     color: var(--color-gray-light)
 }
 
-
-.hero-container {
-    border-radius: 20px;
-    background-color: rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(10px);
-    z-index: 30;
-}
 
 .wrapper { 
     display: flex;
@@ -116,6 +112,7 @@ p {
 }
 
 
+
 @keyframes animate { 
     0%  {
         border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
@@ -128,6 +125,21 @@ p {
     }
 }
 
+
+@media only screen and (max-width: 1000px) {
+    button[_ngcontent-ng-c4019011279] {
+       padding: 20px;
+       width: 100%;
+    }
+
+    .toggle-container { 
+        width: 100%;
+    }
+}
+ 
+ 
+ 
+ 
 
 @media only screen and (min-width: 1000px) {
    section { 
@@ -143,7 +155,7 @@ p {
     .hero-container { 
         max-width: 700px;
         height: 35dvh;
-        padding: 50px;
+        padding: 20px;
         display: flex;
         align-items: center;
         justify-content: center;

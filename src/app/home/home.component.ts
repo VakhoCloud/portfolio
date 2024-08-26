@@ -43,9 +43,7 @@ export class HomeComponent implements OnInit{
     this.setupIntersectionObserver();
   }
 
-  // toggleContactForm() {
-  //   this.contactFormService.toggleContactForm();
-  // }
+
 
   setupIntersectionObserver() {
     const options = {
@@ -103,6 +101,8 @@ export class HomeComponent implements OnInit{
 
         const logoBox = document.querySelector('.logo-box');
         const logoBoxHeight = logoBox ? logoBox.clientHeight + 10 : 0;
+
+
     
         // Calculate the element's position relative to the viewport
         const elementPosition = element.getBoundingClientRect().top;

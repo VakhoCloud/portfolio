@@ -35,6 +35,10 @@ h1 {
     color: var(--color-green);
 }
 
+mat-divider { 
+    background-color: var(--color-green);
+}
+
 @media only screen and (min-width: 1000px) {
     section { 
         margin: 40px 0 80px 0;

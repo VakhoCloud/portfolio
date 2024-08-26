@@ -4,15 +4,15 @@
         <span></span>
         <span></span>
     </div>
-    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <form action="https://formspree.io/f/xyzgoybq" method="POST">
         <div class="section-input">
             <mat-form-field>
                 <mat-label for="fullname">Full Name</mat-label>
-                <input type="text" name="fullname" id="fullname" matInput  ngModel required>
+                <input type="text" name="fullname" id="fullname" matInput>
             </mat-form-field>
             <mat-form-field>
                 <mat-label for="email">Email Address</mat-label>
-                <input type="email" name="email" id="email" matInput  ngModel required>
+                <input type="email" name="email" id="email" matInput>
             </mat-form-field>
         </div>
         <div class="section-input">
@@ -33,7 +33,7 @@
         </div>
         <div class="contact-me">
             <a>
-                <button type="submit" [disabled]="f.invalid">Send Message</button>
+                <button type="submit">Send Message</button>
             </a>
         </div>
     </form>
